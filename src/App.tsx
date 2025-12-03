@@ -6,13 +6,13 @@ function App() {
 
   return (
 
-    <HStack>
-      <Button colorPalette="teal" variant="solid">
-        <RiMailLine /> Email
-      </Button>
-      <Button colorPalette="teal" variant="outline">
-        Call us <RiArrowRightLine />
-      </Button>
+     <HStack wrap="wrap" gap="6">
+      <Button variant="solid">Solid</Button>
+      <Button variant="subtle">Subtle</Button>
+      <Button variant="surface">Surface</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="plain">Plain</Button>
     </HStack>
     
   )
