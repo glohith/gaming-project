@@ -1,27 +1,7 @@
-import { useEffect, useState } from "react";
-import apiClient from "../Services/api-client";
 
-interface Game {
-  id: number;
-  name: string;
-}
-interface FetchGameResponse {
-  count: number;
-  results: Game[];
-}
-
+import useGames from "../hooks/useGames";
 const GameGrid = () => {
-  const [games, setGames] = useState<Game[]>([{
-    id: 2,
-    name: "Murasli"
-  }]);
-  const [error, setError] = useState(``);
-  useEffect(() => {
-    apiClient
-      .get<FetchGameResponse>("/games")
-      .then((res) =>setGames(res.data.results))
-      .catch((err) => setError(err.meessage));
-  },[]);
+  const {games,error} = useGames()
   return (
     <>
       {error && <p>{error}</p>}
