@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import apiClient from "../Services/api-client";
-import { ins } from "framer-motion/client";
+
 import { CanceledError } from "axios";
 
-interface Game {
+ export interface Game {
   id: number;
   name: string;
+  background_image: string;
 }
 interface FetchGameResponse {
   count: number;
