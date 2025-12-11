@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
 
+
 function app() {
   return (
     <>
@@ -12,6 +13,12 @@ function app() {
           base: `"nav" " main"`,
           lg: `"nav nav" "aside main"`,
         }}
+      templateColumns={{
+        base:`1fr`,
+        lg:`200px 1fr`
+      }}
+
+        
       >
         <GridItem area={`nav`}>
           <NavBar />
@@ -19,7 +26,7 @@ function app() {
 
         <GridItem
           area={`aside`}
-          
+          paddingX={`3`}
         >
           <GenreList />
         </GridItem>
