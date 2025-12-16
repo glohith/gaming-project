@@ -1,19 +1,23 @@
 import { Button, Menu } from '@chakra-ui/react'
-import { button } from 'framer-motion/client'
+
 import { BsChevronDown } from "react-icons/bs"
 
 import usePlatforms from '../hooks/usePlatform'
+import type { Platform } from '../hooks/useGames'
 
-
-const PlatformSelector = () => {
+interface props {
+    onSelectPlatform:(Platform:Platform)=>void;
+    selectedPlatform:Platform|null
+}
+const PlatformSelector = ({onSelectPlatform,selectedPlatform}:props) => {
     const {data} = usePlatforms();
   return (
     <Menu.Root>
         <Menu.Trigger asChild>
 
-        <Button as={button} variant="outline">
+        <Button variant="outline">
 
-            Platforms
+            {selectedPlatform?.name || 'Platforms'}
             <BsChevronDown />
             </Button>
 
@@ -22,6 +26,7 @@ const PlatformSelector = () => {
     <Menu.Content>
       {data?.map((platform) => (
         <Menu.Item 
+        onClick={()=> onSelectPlatform(platform)}
           key={platform.id} 
           // 2. Value must be unique for each item
           value={platform.name} 
