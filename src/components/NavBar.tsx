@@ -1,13 +1,19 @@
-import { HStack, Image, Text } from "@chakra-ui/react"
+import { HStack, Image } from "@chakra-ui/react"
 import logo1 from "../assets/logo1.webp"
+import SearchInput from "./SearchInput"
+
+interface props{
+    onSearch:(searchText:string)=>void;
+}
 
 
-const NavBar = () => {
+const NavBar = ({onSearch}:props) => {
   return (
 
     <HStack>
         <Image src={logo1} boxSize={`100px`} />
-        <Text>NavBar</Text>
+        <SearchInput onSearch={onSearch} />
+        
     </HStack>
     
       
