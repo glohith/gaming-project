@@ -1,6 +1,6 @@
 {
   "name": "gaming-app",
-  "homepage": "https://glohith.github.io/gaming-project/",
+  "homepage": "https://glohith.github.io/gaming-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,8 +10,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy":"npm run build",
-    "deploy":"gh-pages-d build"
-  },
+    "deploy": "gh-pages -d build"
+    
+  
+
+},
   "dependencies": {
     "@chakra-ui/react": "^3.30.0",
     "@emotion/react": "^11.14.0",
